@@ -64,8 +64,8 @@ n_AQN = 1.67*10**-24 * 1/u.cm**3
 
 
 
-m_AQN_kg = 1*u.kg
-R_AQN = calc_R_AQN(1*u.kg)
+# m_AQN_kg = 0.23*u.kg
+# R_AQN = calc_R_AQN(m_AQN_kg)
 
 # R_AQN = 10**(-5) * u.cm
 # m_AQN = 1 * u.g * g_to_GeV
