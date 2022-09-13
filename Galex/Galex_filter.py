@@ -25,7 +25,8 @@ y = np.array(y)
 p_initial = (0.79,1513,121)
 bandwidth_filter_x = (x>filter_min) & (x<filter_max)
 parameters = curve_fit(gaussian, x[bandwidth_filter_x], y[bandwidth_filter_x], p0=p_initial)[0]
-print("unnormalized parameters: ", parameters)
+print("fitting to: a * exp(-(x-b)**2/(2*c)**2)")
+print("unnormalized parameters: [a, b, c] =", parameters)
 
 bandwidth_integral = integrate.quad(gaussian, filter_min,filter_max,args=(parameters[0],parameters[1],parameters[2]))[0]
 print("bandwidth integral is: ", bandwidth_integral)
