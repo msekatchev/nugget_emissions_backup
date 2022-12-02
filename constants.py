@@ -40,7 +40,9 @@ invcm_to_erg = 1/cm_to_GeVinv * GeV_to_erg
 def sech(x):
     return 1 / np.cosh(x)
 
-nuclear_density_cgs = (2.3e17 * u.kg/u.m**3).cgs
+#nuclear_density_cgs = (2.3e17 * u.kg/u.m**3).cgs
+nuclear_density_cgs = (3.5e17 * u.kg/u.m**3).cgs
+
 def calc_m_AQN(R):
     return 4/3 * np.pi * R.cgs**3 * nuclear_density_cgs
 def calc_R_AQN(m):
