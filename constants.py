@@ -1,7 +1,7 @@
 import numpy as np
 from astropy import constants as cst
 from astropy import units as u
-
+print("Loaded constants script")
 # Constants
 
 # ----------------------------- unit conversions ----------------------------- 
@@ -50,18 +50,21 @@ def calc_R_AQN(m):
 
 # ----------------------------- constants ----------------------------- 
 
+
 m_e_eV  = (cst.m_e.cgs*cst.c.cgs**2).value * u.erg * erg_to_eV  # mass of electron    in eV
 m_e_erg = (cst.m_e.cgs*cst.c.cgs**2).value * u.erg              # mass of electron    in erg
-m_AQN_GeV = 1 * u.g * g_to_GeV
+m_p_erg = (cst.m_p.cgs).to(u.erg, u.mass_energy())              # mass of proton      in erg
+#m_AQN_GeV = 1 * u.g * g_to_GeV
 
-E_ann_GeV = 2 * u.GeV                                           # energy liberated by proton annihilation
+B = 10**25                                                  # Baryon charge number
+E_ann_GeV = 2 * u.GeV                                       # energy liberated by proton annihilation
 f  = 1/10                                                   # factor to account for probability of reflection
 g  = 1/10                                                   # (1-g) of total annihilation energy is thermalized     
 Dv = 0.00013835783 * u.dimensionless_unscaled               # speed of nugget through visible matter
 Dv = 10**-3 * u.dimensionless_unscaled
 
-n_bar = 1 * 1/u.cm**3
-n_AQN = 1.67*10**-24 * 1/u.cm**3
+# n_bar = 1 * 1/u.cm**3
+# n_AQN = 1.67*10**-24 * 1/u.cm**3
 #  ^^ I don't think T_AQN depends on R_AQN or n_AQN
 
 

@@ -37,6 +37,11 @@ def T_AQN_ionized(n_bar, Dv, f, g, T_p, R):
     return (3/8 * E_ann_GeV * GeV_to_erg  * (1-g) * f * Dv * n_bar.to(1/u.cm**3) * 1/cm_to_inverg**3 * R**2 * cm_to_inverg**2 * (1/cst.alpha)**(5/2) * 1/T_p**2 * 1/eV_to_erg**2)**(4/5)* (m_e_erg) * erg_to_eV
 
 
+def T_AQN_ionized2(n_bar, Dv, f, g, T_p, R):
+    n_bar_erg = n_bar.to(1/u.cm**3) * 1/cm_to_inverg**3
+    return (3/4 * np.pi * (1-g) * f * Dv * 1/cst.alpha**(3/2) * m_p_erg * n_bar_erg * 
+            R**2 * cm_to_inverg**2 * 
+            1/T_p**2 * 1/eV_to_erg**2)**(4/7)* (m_e_erg) * erg_to_eV
 
 
 # erg s^-1 cm^-2
