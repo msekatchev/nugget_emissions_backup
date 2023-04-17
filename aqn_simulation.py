@@ -45,8 +45,15 @@ def simulate_signal(m_aqn_kg):
 
     ########### Burkert Profile #########################################
     if dm_model == "Burkert Profile":
+        # defaults:
         vh = 414 * u.km / u.s
         r0 = 7.8 * u.kpc
+        
+        # my changes:
+        # [1,414,]
+        vh = 26.566 * u.km / u.s
+        r0 = 4.757 * u.kpc
+        
         rho0 = (vh**2 / (4*np.pi * r0**2 * cst.G)).to(u.kg/u.m**3)
 
         def rho_halo(R_kpc):
