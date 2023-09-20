@@ -370,6 +370,7 @@ def simulate_signal(m_aqn_kg):
                        spectral_spatial_emissivity_hot( n_aqn_cm3, n_wh, Dv, f, g, T_warm_hot, R_aqn_cm, frequency_band) +
                        spectral_spatial_emissivity_hot( n_aqn_cm3, n_h,  Dv, f, g, T_hot,      R_aqn_cm, frequency_band))* \
                 4 * np.pi * R_aqn_cm**2 * n_aqn_cm3.to(1/u.cm**3)
+            print(epsilon)
             return epsilon #.value
 
         F_tot_galex = sum(func(n_cold,n_warm,n_warm_hot,n_hot, frequency_band)) / (4*np.pi) * (dl.cgs) * dOmega
